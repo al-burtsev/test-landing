@@ -334,7 +334,7 @@ img {
   background-image: url(/src/images/hero/hero-bg.webp);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: 65%;
 }
 .hero__wrapper {
   max-width: 780px;
