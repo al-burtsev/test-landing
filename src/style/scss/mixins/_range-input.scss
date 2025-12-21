@@ -1,0 +1,81 @@
+@mixin slider-thumb($bg-color, $box-shadow-color) {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  background-color: #{$bg-color};
+  box-shadow: 0 0 0 3px inset #{$box-shadow-color};
+  transition: 300ms;
+  margin-top: -7.5px;
+}
+
+// Общие стили для range input
+@mixin range-input($text-color-primary, $accent-light-4, $accent-light-3, $accent-dark-1) {
+  &::-webkit-slider-runnable-track {
+    box-sizing: border-box;
+    height: 6px;
+    background-color: hsl(from #{$text-color-primary} h s l / 0.7);
+    border: 1px solid #{$text-color-primary};
+    border-radius: 10px;
+  }
+
+  &::-moz-range-track {
+    box-sizing: border-box;
+    height: 6px;
+    background-color: hsl(from #{$text-color-primary} h s l / 0.7);
+    border: 1px solid #{$text-color-primary};
+    border-radius: 10px;
+  }
+
+  &::-webkit-slider-thumb {
+    @include slider-thumb($accent-light-4, $accent-light-3);
+    margin-top: -10px;
+  }
+
+  &::-moz-range-thumb {
+    @include slider-thumb($accent-light-4, $accent-light-3);
+    margin-top: 0;
+  }
+
+  &:focus-visible {
+    outline-offset: 10px;
+    outline: 1px solid #{$accent-light-4};
+  }
+
+  // Настройка теней при наведении
+  &:hover::-webkit-slider-thumb {
+    box-shadow: 0 0 0 4px inset #{$accent-light-3};
+  }
+
+  &:hover::-moz-range-thumb {
+    box-shadow: 0 0 0 4px inset #{$accent-light-3};
+  }
+
+  // Cостояние фокуса
+  &:focus-visible::-webkit-slider-thumb {
+    outline: 3px solid $accent-light-4;
+  }
+
+  &:focus-visible::-moz-range-thumb {
+    outline: 3px solid $accent-light-4;
+  }
+
+  // Активное состояние
+  &:active::-webkit-slider-thumb {
+    box-shadow: 0 0 0 30px inset #{$accent-light-3};
+  }
+
+  &:active::-moz-range-thumb {
+    box-shadow: 0 0 0 30px inset #{$accent-light-3};
+  }
+
+  // Деактивированное состояние
+  &:disabled::-webkit-slider-thumb {
+    box-shadow: 0 0 0 30px inset $accent-dark-1;
+  }
+
+  &:disabled::-moz-range-thumb {
+    box-shadow: 0 0 0 30px inset $accent-dark-1;
+  }
+}

@@ -1,0 +1,56 @@
+@use '../base/variables' as *;
+
+.hero {
+  padding-block: 100px 200px;
+
+  @media (width <=768px) {
+    padding-block: 64px 72px;
+  }
+
+  color: $text-color-second;
+  background-image: url(/src/images/hero/hero-bg.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__wrapper {
+    max-width: 780px;
+    display: flex;
+    flex-direction: column;
+    gap: $section-content-gap;
+  }
+
+  &__title {
+    color: $accent-light-2;
+    font-weight: 700;
+    font-size: clamp(27px, 4vw, 48px);
+    line-height: 1.3;
+    text-wrap: balance;
+    text-transform: uppercase;
+
+    span {
+      color: $text-color-second;
+    }
+  }
+
+  &__descr {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  &__list-item {
+    font-size: 20px;
+
+    &::before {
+      content: '-';
+      padding: 0 10px;
+    }
+  }
+
+  &__links {
+    max-width: 396px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}

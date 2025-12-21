@@ -1,0 +1,45 @@
+@use '../base/variables' as *;
+@use '../components/step-card';
+@use '../components/form';
+@use '../components/select';
+
+.order {
+  padding-block: 120px 150px;
+  background-image: image-set('/src/images/order/order-bg.webp', 1x, '/src/images/order/order-bg@2x.webp' 2x);
+  background-size: cover;
+
+  @media (width <=768px) {
+    padding-block: 64px 72px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $section-content-gap;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+}
+
+.step-list {
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(209px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 130px 30px;
+  overflow-x: clip;
+
+
+  &__item {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 209px;
+  }
+}

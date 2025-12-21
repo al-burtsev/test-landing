@@ -1,0 +1,144 @@
+@use 'variables' as *;
+
+html {
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar-thumb {
+    height: 10px;
+    background: $accent-light-2;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+::selection {
+  color: $text-color-primary;
+  background-color: $accent-light-1;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family;
+  line-height: 1.5;
+  color: $text-color-primary;
+  background-color: $accent-dark-1;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  border: none;
+  background: transparent;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.d-none {
+  display: none;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-accent {
+  color: $accent-light-2;
+}
+
+.container {
+  max-width: $container-width;
+  margin-inline: auto;
+  padding-inline: $container-offset;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.btn {
+  --btn-padding: 8.5px 10px;
+  --btn-color: $text-color-primary;
+  --btn-bg-color: transparent;
+  --btn-border-width: 1px;
+  --btn-border-color: transparent;
+  --btn-border-style: solid;
+  --btn-border-radius: 4px;
+  --btn-font-weight: 400;
+  --btn-text-transform: uppercase;
+  --btn-text-align: center;
+
+  padding: var(--btn-padding);
+  color: var(--btn-color);
+  background-color: var(--btn-bg-color);
+  border-width: var(--btn-border-width);
+  border-color: var(--btn-border-color);
+  border-style: var(--btn-border-style);
+  border-radius: var(--btn-border-radius);
+  font-weight: var(--btn-font-weight);
+  text-transform: var(--btn-text-transform);
+  text-align: var(--btn-text-align);
+  margin: 0;
+  cursor: pointer;
+  will-change: scale, background-color;
+  transition: scale .3s ease-out, background-color .3s, color .3s, border-color .3s ease-in-out;
+
+  @media (any-hover: hover) {
+    &:hover {
+      --btn-bg-color: #{$accent-light-1};
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid #{$accent-light-2};
+    outline-offset: 4px;
+  }
+
+  &:active {
+    scale: 0.98;
+  }
+
+  &--accent {
+    --btn-bg-color: #{$accent-light-2};
+    --btn-border-color: #{$text-color-primary};
+    --btn-color: #{$text-color-primary};
+  }
+
+  &--ghost {
+    --btn-bg-color: #{$text-color-primary};
+    --btn-border-color: #{$text-color-fourth};
+    --btn-color: #{$text-color-third};
+
+    @media (any-hover: hover) {
+      &:hover {
+        --btn-bg-color: #{$text-color-primary};
+        --btn-color: #{$accent-light-1};
+        --btn-border-color: #{$accent-light-1};
+      }
+    }
+  }
+}
+
+.title {
+  font-weight: 900;
+  font-size: clamp(27px, 4vw, 36px);
+  text-transform: uppercase;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 18px;
+  color: #bbb;
+}

@@ -1,0 +1,109 @@
+@use '../base/variables' as *;
+@use '../mixins/range-input' as *;
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+
+  @media (width <=768px) {
+    grid-auto-flow: dense;
+  }
+
+  &__field {
+    padding: 12px 36px 12px 10px;
+    border: 1px solid $text-color-primary;
+    border-radius: 3px;
+
+    font-size: 18px;
+    color: $accent-dark-1;
+    background-color: hsl(from $text-color-primary h s l / 0.85);
+
+    &::placeholder {
+      color: $accent-dark-1;
+    }
+  }
+
+  &__range {
+    grid-column: span 2;
+
+    @media (width <=550px) {
+      grid-column: 1/-1;
+    }
+  }
+
+  &__range-text {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__range-input {
+    width: 100%;
+    appearance: none;
+
+    @include range-input($text-color-primary, $accent-light-4, $accent-light-3, $accent-dark-1);
+  }
+
+  &__file-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    border: 2px solid $accent-light-2;
+    border-radius: 3px;
+    color: $accent-dark-1;
+    background-color: $text-color-primary;
+    cursor: pointer;
+
+    &:hover {
+      .form__file-icon {
+        animation: file-knock .6s forwards;
+      }
+    }
+  }
+
+  &__file-input {
+    position: absolute;
+    z-index: -1;
+    visibility: hidden;
+    scale: 0;
+  }
+
+  &__file-icon {
+    width: 18px;
+    max-height: 20px;
+  }
+
+  &__submit {
+    grid-column-start: 2;
+    padding-block: 13.5px;
+
+    @media (width <=550px) {
+      grid-column: 1/-1;
+    }
+  }
+}
+
+@keyframes file-knock {
+  0% {
+    rotate: 0;
+  }
+
+  50% {
+    rotate: -25deg;
+  }
+
+  75% {
+    rotate: 10deg;
+  }
+
+  100% {
+    rotate: 0;
+  }
+}

@@ -1,0 +1,40 @@
+@use '../base/variables' as *;
+
+.custom-select {
+  /* Colors */
+  --ss-main-height: 48px;
+  --ss-primary-color: #{$accent-dark-1};
+  --ss-bg-color: hsl(from #{$text-color-primary} h s l / 0.85);
+  --ss-font-color: #{$accent-dark-1};
+  --ss-placeholder-color: #{$accent-dark-1};
+
+  padding: 0;
+  font-size: 18px;
+
+  &::placeholder {
+    color: $accent-dark-1;
+  }
+
+  &.ss-open {
+    --ss-font-color: #{$text-color-primary};
+    --ss-placeholder-color: #{$text-color-primary};
+    --ss-bg-color: #{$accent-light-4};
+
+    background-color: $accent-dark-2;
+  }
+
+  .ss-list {
+    color: $text-color-primary;
+    background-color: $accent-dark-1;
+
+    &::-webkit-scrollbar-thumb {
+      height: 10px;
+      background: $accent-light-2;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+  }
+}

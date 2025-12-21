@@ -1,0 +1,23 @@
+$accent-light-1: #43abf0;
+$accent-light-2: #3e9cdc;
+$accent-light-3: #286690;
+$accent-light-4: #42a9ed;
+
+$accent-dark-1: #272733;
+$accent-dark-2: #3d4050;
+
+$text-color-primary: #ffffff;
+$text-color-second: #000000;
+$text-color-third: #2a2b30;
+$text-color-fourth: #6f6d7b;
+
+$font-family: "Lato", sans-serif;
+
+$content-width: 1172px;
+$container-offset: 16px;
+$container-width: calc($content-width + ($container-offset * 2));
+
+$section-content-gap: clamp(24px, 8vw, 80px);
+
+// footer
+$footer-content-offset: clamp(16px, 4vw, 40px);

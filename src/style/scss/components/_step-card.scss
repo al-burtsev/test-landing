@@ -1,0 +1,52 @@
+@use '../base/variables' as *;
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-inline: 11px;
+
+  &__img {
+    position: relative;
+    z-index: 10;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 100%;
+    background-color: $accent-light-3;
+
+    &::before {
+      --inner-offset: 10px;
+
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: calc(100% - var(--inner-offset));
+      height: calc(100% - var(--inner-offset));
+      top: 50%;
+      left: 50%;
+      border-radius: 100%;
+      background-color: $accent-light-2;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  &__text {
+    text-align: center;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

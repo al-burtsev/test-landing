@@ -1,0 +1,20 @@
+{
+  "name": "test-landing",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "compile:sass": "sass src/style/scss/main.scss src/style/index.css",
+    "watch:sass": "sass --watch src/style/scss/main.scss src/style/index.css"
+  },
+  "devDependencies": {
+    "sass": "^1.97.0",
+    "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "slim-select": "^3.3.0"
+  }
+}

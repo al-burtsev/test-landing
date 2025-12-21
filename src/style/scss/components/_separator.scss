@@ -1,0 +1,59 @@
+@use '../base/variables' as *;
+
+.separator {
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  left: -70px;
+  top: 35%;
+  transform: translate(0, -50%);
+
+  &--moving {
+    display: none;
+  }
+
+  @media (width <=479px) {
+    inset: initial;
+    left: 50%;
+    top: -70px;
+    transform: translate(-50%, -50%);
+
+    &--moving {
+      display: block;
+    }
+  }
+}
+
+.dots {
+  display: flex;
+  gap: 20px;
+
+  @media (width <=479px) {
+    gap: 10px;
+    flex-direction: column;
+  }
+}
+
+.dots span {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: white;
+  animation: blink 3s infinite;
+}
+
+@keyframes blink {
+  0% {
+    background-color: #{$accent-light-3};
+  }
+
+  75% {
+    background-color: white;
+  }
+
+  100% {
+    background-color: #{$accent-light-3};
+  }
+}
