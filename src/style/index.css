@@ -696,11 +696,9 @@ img {
 }
 
 .separator {
-  display: flex;
-  align-items: center;
   position: absolute;
   left: -70px;
-  top: 35%;
+  top: 68px;
   transform: translate(0, -50%);
 }
 .separator--moving {

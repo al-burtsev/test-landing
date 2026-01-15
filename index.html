@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>test-landing | al-burtsev</title>
   <link rel="stylesheet" href="/src/style/index.css">
-  <script type="module" defer src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/main.js"></script>
 </head>
 
 <body>
@@ -214,15 +214,15 @@
             </li>
           </ul>
         </div>
-        <form class="form order__form" action="" method="POST">
-          <select name="system-type" id="system-select" class="custom-select" required>
+        <form class="form order__form" action="/" method="POST">
+          <select name="system-type" id="system-select" class="custom-select" size="10" required>
           </select>
           <input type="email" name="email" required placeholder="Ваш e-mail" class="form__field">
           <input type="text" name="name" required minlength="2" placeholder="Ваше имя" class="form__field">
           <label class="form__range">
-            <div class="form__range-text">
+            <span class="form__range-text">
               Sed ut perspiciatis, unde omnis iste natus <span id="range-value"></span>
-            </div>
+            </span>
             <input type="range" min="0" max="100" name="range" id="range" class="form__range-input">
           </label>
           <label class="form__file">
